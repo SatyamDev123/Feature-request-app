@@ -1,6 +1,6 @@
 ## Feature Request Web App
 Feature Request Web App backend built on Nodejs, express, and Mongodb.<br/>
-client side is built an Angular, Angular-material, Gulp
+client side is built an Angular, Bootstrap, Gulp
 
 ## Server Installation && Start 
 if you don't have mongodb install on your local machine, please install it. 
