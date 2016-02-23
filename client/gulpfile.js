@@ -21,12 +21,14 @@ var paths = {
         'angular/angular.js',
         'angular-messages/angular-messages.js',
         'angular-ui-router/release/angular-ui-router.js',
-        'angular-toastr/dist/angular-toastr.tpls.js'
+        'angular-toastr/dist/angular-toastr.tpls.js',
+        'angular-loading-bar/build/loading-bar.js'
     ],
     vendor_css: [
         'font-awesome/css/font-awesome.css',
         'bootstrap/dist/css/bootstrap.css',
-        'angular-toastr/dist/angular-toastr.css'
+        'angular-toastr/dist/angular-toastr.css',
+        'angular-loading-bar/build/loading-bar.css'
     ],
     html: ['**/**/*.html'],
     fonts: ['font-awesome/fonts/*']

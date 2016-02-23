@@ -5,7 +5,7 @@ var featureRequest = require('./../controller/feature-request');
 
 module.exports = function(router) {
 
-    // user routes
+    // feature-request routes
     router.get('/feature-request', featureRequest.getAll);
     router.get('/feature-request/:id', featureRequest.getById);
     router.post('/feature-request', featureRequest.save);
