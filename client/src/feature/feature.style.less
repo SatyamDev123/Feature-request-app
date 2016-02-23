@@ -1,4 +1,39 @@
-.feature-form-container {}
+.feature-header {
+    height: 40px;
+    padding: 15px 0;
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.feature-form-container {
+    form {
+        > section {
+            padding: 0;
+            .form-group {
+                > label {
+                    padding-left: 0;
+                }
+                > div {
+                    padding-right: 0;
+                }
+                .custom-error {
+                    p {
+                        margin-bottom: 0;
+                        color: red;
+                    }
+                }
+            }
+        }
+        > section:not(:last-child) {
+            > div {
+                height: 55px;
+                margin: 0;
+            }
+        }
+    }
+}
 
 .feature-requests-lists {
     .feature-requests-table {
@@ -7,6 +42,45 @@
         }
         td {
             font-weight: 300;
+            p {
+                margin: 0 !important;
+            }
+        }
+        .feature-title-td {
+            p {
+                display: block;
+                /* Fallback for non-webkit */
+                display: -webkit-box;
+                max-width: 150px;
+                //line-height: 1.4; lines-to-show: 2;
+                height: 14px*1.4*2;
+                /* Fallback for non-webkit */
+                // margin: 0 auto;
+                font-size: 14px;
+                line-height: 1.4;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .feature-description-td {
+            p {
+                display: block;
+                /* Fallback for non-webkit */
+                display: -webkit-box;
+                max-width: 200px;
+                //line-height: 1.4; lines-to-show: 3;
+                height: 14px*1.4*3;
+                /* Fallback for non-webkit */
+                // margin: 0 auto;
+                font-size: 14px;
+                line-height: 1.4;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     }
 }

@@ -26,14 +26,14 @@
                 if (vm.isEdit()) {
                     FeatureRequestServices.update(vm.featureRequest).then(function() {
                         $state.go('featureRequest');
-                        toastr.success('Feature request upated SUccessfully!');
+                        toastr.success('Feature request upated Successfully!');
                     }, function(err) {
                         toastr.error('Please try again', 'Server Error');
                     })
                 } else {
                     FeatureRequestServices.save(vm.featureRequest).then(function() {
                         $state.go('featureRequest');
-                        toastr.success('Feature request save SUccessfully!');
+                        toastr.success('Feature request save Successfully!');
                     }, function(err) {
                         toastr.error('Please try again', 'Server Error');
                     })

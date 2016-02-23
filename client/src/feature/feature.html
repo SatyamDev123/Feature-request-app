@@ -1,13 +1,13 @@
-<header class="padding-15 p-l-0" class="feature-form-header">
-    <h3 class="col-sm-12 margin-0 p-l-0">Feature Requests List:-</h3>
-    <hr class="col-sm-12">
+<header class="feature-header">
+    <h3 class="col-sm-12">Feature Requests List:-</h3>
 </header>
+<hr>
 <article class="feature-requests-lists">
     <header>
         <button type="button" class="btn btn-default" ui-sref="featureRequestAdd">
             <i class="fa fa-lg fa-plus"></i> Add
         </button>
-        <hr class="col-sm-12">
+        <hr>
     </header>
     <table class="table feature-requests-table">
         <!-- <caption>Add or Update </caption> -->
@@ -19,7 +19,7 @@
                 <th>Client</th>
                 <th>Priority</th>
                 <th>Target Date</th>
-                <th>Url</th>
+                <th>Ticket Url</th>
                 <th>Product Area</th>
             </tr>
         </thead>
@@ -33,14 +33,17 @@
                         <i class="fa fa-lg fa-trash"></i>
                     </button>
                 </td>
-                <td>{{featureData.title}}</td>
+                <td class="feature-title-td">
+                    <p>{{featureData.title}}</p>
+                </td>
                 <td class="feature-description-td">
-                    <p class="margin-0">{{featureData.description}}</p>
+                    <p>{{featureData.description}}</p>
                 </td>
                 <td>{{featureData.client}}</td>
                 <td>{{featureData.client_priority}}</td>
                 <td>{{featureData.target_date | date:'MM/dd/yyyy'}}</td>
-                <td>{{featureData.ticket_url}}</td>
+                <td>
+                    <a href="{{featureData.ticket_url}}" target="_blank">{{featureData.ticket_url}}</a></td>
                 <td>{{featureData.product_area}}</td>
             </tr>
             <tr ng-if="!featureRequest.featureRequestsList.length">
