@@ -1,8 +1,52 @@
-<main>
-	<header>
-		
-	</header>
-	<article>
-		
-	</article>
-</main>
+<header>
+    <h3>Feature Requests List:-</h3>
+    <hr>
+</header>
+<article>
+    <header>
+        <button type="button" class="btn btn-default" ui-sref="featureRequestAdd">
+            <i class="fa fa-lg fa-plus"></i> Add
+        </button>
+    </header>
+    <table class="table feature-requests-table">
+        <!-- <caption>Add or Update </caption> -->
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Client</th>
+                <th>Priority</th>
+                <th>Target Date</th>
+                <th>Url</th>
+                <th>Product Area</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="featureData in featureRequest.featureRequestsList track by $index">
+                <td>
+                    <button type="button" class="btn btn-default" ui-sref="featureRequestEdit({id:featureData._id})">
+                        <i class="fa fa-lg fa-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="featureRequest.remove(featureData._id)">
+                        <i class="fa fa-lg fa-trash"></i>
+                    </button>
+                </td>
+                <td>{{featureData.title}}</td>
+                <td class="feature-description-td">
+                    <p>{{featureData.description}}</p>
+                </td>
+                <td>{{featureData.client}}</td>
+                <td>{{featureData.client_priority}}</td>
+                <td>{{featureData.target_date | date:'MM/dd/yyyy'}}</td>
+                <td>{{featureData.ticket_url}}</td>
+                <td>{{featureData.product_area}}</td>
+            </tr>
+            <tr ng-if="!featureRequest.featureRequestsList.length">
+                <td colspan="8">
+                    <h5 class="text-center">Empty Feature Requests Data</h5>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</article>

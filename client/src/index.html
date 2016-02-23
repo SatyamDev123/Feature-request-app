@@ -11,12 +11,11 @@
 </head>
 
 <body ng-cloak="">
-    <main class="app" ng-controller="appCtrl as app">
-        <header class="app-header">
-            
+    <main class="app">
+        <header class="app-header padding-15">
+            <h2 class="text-center margin-0">Feature Request App</h2>
         </header>
-        <section class="app-content">
-        </section>
+        <section class="app-content container-fluid" ui-view></section>
     </main>
     <script src="./scripts/vendor.js"></script>
     <script src="./scripts/app.js"></script>

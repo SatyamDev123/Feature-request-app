@@ -9,6 +9,6 @@ module.exports = function(router) {
     router.get('/feature-request', featureRequest.getAll);
     router.get('/feature-request/:id', featureRequest.getById);
     router.post('/feature-request', featureRequest.save);
-    router.post('/feature-request/:id', featureRequest.update);
+    router.put('/feature-request/:id', featureRequest.update);
     router.delete('/feature-request/:id', featureRequest.remove);
 }

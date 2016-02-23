@@ -19,12 +19,14 @@ var paths = {
     vendor_js: [
         'jquery/dist/jquery.js',
         'angular/angular.js',
+        'angular-messages/angular-messages.js',
         'angular-ui-router/release/angular-ui-router.js',
-        'angular-material/angular-material.css'
+        'angular-toastr/dist/angular-toastr.tpls.js'
     ],
     vendor_css: [
         'font-awesome/css/font-awesome.css',
-        'angular-material/angular-material.css'
+        'bootstrap/dist/css/bootstrap.css',
+        'angular-toastr/dist/angular-toastr.css'
     ],
     html: ['**/**/*.html'],
     fonts: ['font-awesome/fonts/*']
@@ -68,6 +70,10 @@ gulp.task('copy', function() {
     // Copy html
     gulp.src(paths.html, { cwd: bases.app })
         .pipe(gulp.dest(bases.dist));
+
+    // copy bootstrap css map file
+    gulp.src('bootstrap/dist/css/bootstrap.css.map', { cwd: bases.vendor })
+        .pipe(gulp.dest(bases.dist + 'styles/'));
 
     // Copy fonts
     gulp.src(paths.fonts, { cwd: bases.vendor })

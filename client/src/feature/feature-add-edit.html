@@ -1,0 +1,95 @@
+<header class="padding-15">
+    <h3 class="col-sm-6 margin-0">{{isEdit() ? 'Update' : 'Add' }} Feature Request:-</h3>
+    <div class="col-sm-offset-4 col-sm-2">
+        <button type="button" class="btn btn-default" ui-sref="featureRequest">
+            <i class="fa fa-lg fa-reply"></i> Back To List
+        </button>
+    </div>
+    <hr>
+</header>
+<article>
+    <form class="form-horizontal" novalidate name="featureRequestsForm" ng-submit="featureRequestsAddEdit.addOrUpdate(featureRequestsForm)">
+        <div class="form-group" ng-class="{ 'has-error': featureRequestsForm.title.$touched && featureRequestsForm.title.$invalid }">
+            <label class="col-sm-2 control-label">Title:</label>
+            <div class="col-sm-8">
+                <input type="text" name="title" class="form-control" placeholder="Title" ng-model="featureRequestsAddEdit.featureRequest.title" required>
+                <div class="help-block" ng-messages="featureRequestsForm.title.$error" ng-if="featureRequestsForm.title.$touched">
+                    <p ng-message="required">Title is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': featureRequestsForm.description.$touched && featureRequestsForm.description.$invalid }">
+            <label class="col-sm-2 control-label">Description:</label>
+            <div class="col-sm-8">
+                <textarea rows="6" name="description" class="form-control" placeholder="Description" ng-model="featureRequestsAddEdit.featureRequest.description" required maxlength="250" minlength="20"></textarea>
+                <div class="help-block" ng-messages="featureRequestsForm.description.$error" ng-if="featureRequestsForm.description.$touched">
+                    <p ng-message="minlength">Description should not be smaller then 20 char.</p>
+                    <p ng-message="maxlength">Description should not be greater then 250 char.</p>
+                    <p ng-message="required">Description is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': featureRequestsForm.client.$touched && featureRequestsForm.client.$invalid }">
+            <label class="col-sm-2 control-label">Client:</label>
+            <div class="col-sm-8">
+                <select name="client" class="form-control" ng-model="featureRequestsAddEdit.featureRequest.client" required>
+                    <option selected value=''>Select Client</option>
+                    <option value="Client A">Client A</option>
+                    <option value="Client B">Client B</option>
+                    <option value="Client C">Client C</option>
+                </select>
+                <div class="help-block" ng-messages="featureRequestsForm.client.$error" ng-if="featureRequestsForm.client.$touched">
+                    <p ng-message="required">Client is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': featureRequestsForm.client_priority.$touched && featureRequestsForm.client_priority.$invalid }">
+            <label class="col-sm-2 control-label">Client Priority:</label>
+            <div class="col-sm-8">
+                <input type="number" name="client_priority" class="form-control" placeholder="Client Priority" ng-model="featureRequestsAddEdit.featureRequest.client_priority" required>
+                <div class="help-block" ng-messages="featureRequestsForm.client_priority.$error" ng-if="featureRequestsForm.client_priority.$touched">
+                    <p ng-message="required">Client Priority is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': featureRequestsForm.target_date.$touched && featureRequestsForm.target_date.$invalid }">
+            <label class="col-sm-2 control-label">Client Priority:</label>
+            <div class="col-sm-8">
+                <input type="date" name="target_date" class="form-control" ng-model="featureRequestsAddEdit.featureRequest.target_date" required>
+                <div class="help-block" ng-messages="featureRequestsForm.target_date.$error" ng-if="featureRequestsForm.target_date.$touched">
+                    <p ng-message="required">Target Date is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': featureRequestsForm.ticket_url.$touched && featureRequestsForm.ticket_url.$invalid }">
+            <label class="col-sm-2 control-label">Ticket Url:</label>
+            <div class="col-sm-8">
+                <input type="url" name="ticket_url" class="form-control" ng-model="featureRequestsAddEdit.featureRequest.ticket_url" required placeholder="Ticket Url">
+                <div class="help-block" ng-messages="featureRequestsForm.ticket_url.$error" ng-if="featureRequestsForm.ticket_url.$touched">
+                    <p ng-message="required">Target Date is required.</p>
+                    <p ng-message="url"> Not valid url!</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': featureRequestsForm.product_area.$touched && featureRequestsForm.product_area.$invalid }">
+            <label class="col-sm-2 control-label">Client:</label>
+            <div class="col-sm-8">
+                <select name="product_area" class="form-control" ng-model="featureRequestsAddEdit.featureRequest.product_area" required>
+                    <option selected value=''>Select Product Area</option>
+                    <option value="Policies">Policies</option>
+                    <option value="Billing">Billing</option>
+                    <option value="Claims">Claims</option>
+                    <option value="Reports">Reports</option>
+                </select>
+                <div class="help-block" ng-messages="featureRequestsForm.product_area.$error" ng-if="featureRequestsForm.product_area.$touched">
+                    <p ng-message="required">Product Area is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-4">
+                <button type="submit" class="btn btn-primary btn-block">{{isEdit() ? 'Update' : 'Save' }}</button>
+            </div>
+        </div>
+    </form>
+</article>
