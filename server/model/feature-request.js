@@ -31,6 +31,10 @@ var FeatureRequestSchema = new Schema({
     product_area: {
         type: String,
         required: 'product area is required!'
+    },
+    created_date: {
+        type: Date,
+        default: new Date()
     }
 });
 mongoose.model('FeatureRequest', FeatureRequestSchema);
