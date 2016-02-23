@@ -1,3 +1,5 @@
+// Import Module 
+@import "feature/feature.style.less";
 body {
     margin: 0;
     padding: 0;
@@ -6,10 +8,32 @@ body {
 
 .app {
     .margin-0 {
-        margin: 0;
+        margin: 0 !important;
     }
     .padding-15 {
         padding: 15px;
+    }
+    .p-l-0 {
+        padding-left: 0;
+    }
+    .p-r-0 {
+        padding-right: 0;
+    }
+    h2 {
+        font-weight: 400;
+    }
+    h3,
+    h4 {
+        font-weight: 300;
+    }
+    label {
+        font-weight: 400;
+    }
+    input,
+    select,
+    textarea,
+    button {
+        border-radius: 0;
     }
     .app-header {
         background-color: #e1eef6;

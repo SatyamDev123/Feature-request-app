@@ -1,12 +1,13 @@
-<header>
-    <h3>Feature Requests List:-</h3>
-    <hr>
+<header class="padding-15 p-l-0" class="feature-form-header">
+    <h3 class="col-sm-12 margin-0 p-l-0">Feature Requests List:-</h3>
+    <hr class="col-sm-12">
 </header>
-<article>
+<article class="feature-requests-lists">
     <header>
         <button type="button" class="btn btn-default" ui-sref="featureRequestAdd">
             <i class="fa fa-lg fa-plus"></i> Add
         </button>
+        <hr class="col-sm-12">
     </header>
     <table class="table feature-requests-table">
         <!-- <caption>Add or Update </caption> -->
@@ -34,7 +35,7 @@
                 </td>
                 <td>{{featureData.title}}</td>
                 <td class="feature-description-td">
-                    <p>{{featureData.description}}</p>
+                    <p class="margin-0">{{featureData.description}}</p>
                 </td>
                 <td>{{featureData.client}}</td>
                 <td>{{featureData.client_priority}}</td>
@@ -44,7 +45,7 @@
             </tr>
             <tr ng-if="!featureRequest.featureRequestsList.length">
                 <td colspan="8">
-                    <h5 class="text-center">Empty Feature Requests Data</h5>
+                    <h4 class="text-center">Empty Feature Requests Data</h4>
                 </td>
             </tr>
         </tbody>
