@@ -1,5 +1,5 @@
 ## Feature Request Web App
-Feature Request Web App backend built on Nodejs, express, and Mongodb
+Feature Request Web App backend built on Nodejs, express, and Mongodb.<br/>
 client side is an Angular, Bootstrap, Gulp(build tool only for devlopment enviroment)
 
 
